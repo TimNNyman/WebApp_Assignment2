@@ -95,48 +95,53 @@
             </div>
 
             <div class="updatableNews">
+                <a>
                 <img src="images/raptorsuit2.jpg" alt="" class="image">
                 <div class="TextContent">
                     <div class="Title">Anger Management</div>
                     <div class="Text">Do you have it in you to be a raptor focused on career instead of eating people? The CEO of PeaceRap
                         reveals how he was able to suppress his murderous instincts and manage his astounding career in the
                         IT sector.</div>
-                </div>
+                </div></a>
             </div>
 
             <div class="container">
+                <a>
                 <img src="images/raptorsuit2.jpg" alt="" class="image">
                 <div class="overlay">
                     <div class="title">Anger Management</div>
                     <div class="text">Do you have it in you to be a raptor focused on career instead of eating people? The CEO of PeaceRap
                         reveals how he was able to suppress his murderous instincts and manage his astounding career in the
                         IT sector.</div>
-                </div>
+                </div></a>
             </div>
             <div class="container">
+                <a>
                 <img src="images/raptorbench.jpg" alt="" class="image">
                 <div class="overlay">
                     <div class="title">Raptor Attacks on Campus!</div>
                     <div class="text">An unknown raptor has been spotted on MDH Campus, attacking innocent students! Local police says the
                         use of illegal drugs may be involved.></div>
-                </div>
+                </div></a>
             </div>
             <div class="container">
+                <a>
                 <img src="images/raptorsuit1.jpg" alt="" class="image">
                 <div class="overlay">
                     <div class="title">Something.</div>
                     <div class="text">"This is a huge setback for raptors who are trying to be civilized and co-exist with humans."
                         <br> Raptor Josh Wilson who is a chairman of the internation comittee HRR (Human Raptor Relations) quickly
                         addresses the issue of the vigilante raptor that is wrecking havoc and terrorising students at MDH.</div>
-                </div>
+                </div></a>
             </div>
             <div class="container">
+                <a>
                 <img src="images/raptor2.jpg" alt="" class="image">
                 <div class="overlay">
                     <div class="title">Don't try this at home!</div>
                     <div class="text">See the famous and fearless raptor educator Geordi Szyzylak's attempt at disciplining 3 wild raptors
                         at once!
-                    </div>
+                    </div></a>
                 </div>
             </div>
             <div class="container">
@@ -155,24 +160,27 @@
                 </a> as early as possible to ease their transition into todays modern society.
             </div>
             <div class="container">
-                <img src="images/raptor1.jpg" alt="" class="image" style="height:100%; width:auto">
+                <a>
+                <img src="images/raptor1.jpg" alt="" class="image" style="height:100%; width:auto"></a>
             </div>
             <div class="container">
+                <a>
                 <img src="images/raptorsuit2.jpg" alt="" class="image">
                 <div class="overlay">
                     <div class="title">Anger Management</div>
                     <div class="text">Do you have it in you to be a raptor focused on career instead of eating people? The CEO of PeaceRap
                         reveals how he was able to suppress his murderous instincts and manage his astounding career in the
                         IT sector.</div>
-                </div>
+                </div></a>
             </div>
             <div class="container">
+                <a>
                 <img src="images/raptorsuit2.jpg" alt="" class="image">
                 <div class="overlay">
                     <div class="title">Anger Management</div>
                     <div class="text">Do you have it in you to be a raptor focused on career instead of eating people? The CEO of PeaceRap
                         reveals how he was able to suppress his murderous instincts and manage his astounding career in the
-                        IT sector.</div>
+                        IT sector.</div></a>
                 </div>
             </div>
         </div>
