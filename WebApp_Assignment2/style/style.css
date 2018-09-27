@@ -166,13 +166,13 @@ video {
     margin: 0 auto 0 auto;
 }
 
-.updatableNews>img {
+.updatableNews img {
     height: 100%;
     width: 300px;
     float: left;
 }
 
-.updatableNews>.TextContent {
+.updatableNews .TextContent {
     padding: 20px;
     padding-left: 310px;
 }
