@@ -75,9 +75,33 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="default.aspx" />
+    <Content Include="images\raptor1.jpg" />
+    <Content Include="images\raptor2.jpg" />
+    <Content Include="images\raptor3.jpg" />
+    <Content Include="images\raptor4.jpg" />
+    <Content Include="images\raptor5.jpg" />
+    <Content Include="images\raptorbench.gif" />
+    <Content Include="images\raptorbench.jpg" />
+    <Content Include="images\raptorsuit1.jpg" />
+    <Content Include="images\raptorsuit2.jpg" />
+    <Content Include="script\index.js" />
+    <Content Include="style\Background.css" />
+    <Content Include="style\createContent.css" />
+    <Content Include="style\footer.css" />
+    <Content Include="style\HovrableArticle.css" />
+    <Content Include="style\style.css" />
+    <Content Include="video\Velociraptor.mp4" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>
@@ -91,7 +115,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49974</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
