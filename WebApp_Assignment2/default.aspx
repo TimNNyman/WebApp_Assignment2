@@ -82,7 +82,7 @@
     </div>
     <main>
 
-        <div class="articles">
+        <div id="articles" runat="server" >
 
             <div class="scrollingImgDiv">
                 <img id="scrollingImg" src="images/raptorbench.jpg">
@@ -97,9 +97,9 @@
             <div class="updatableNews">
                 <a>
                 <img src="images/raptorsuit2.jpg" alt="" class="image">
-                <div class="TextContent">
-                    <div class="Title">Anger Management</div>
-                    <div class="Text">Do you have it in you to be a raptor focused on career instead of eating people? The CEO of PeaceRap
+                <div class="textContent">
+                    <div class="title">Anger Management</div>
+                    <div class="text">Do you have it in you to be a raptor focused on career instead of eating people? The CEO of PeaceRap
                         reveals how he was able to suppress his murderous instincts and manage his astounding career in the
                         IT sector.</div>
                 </div></a>

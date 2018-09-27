@@ -131,7 +131,7 @@ li a {
     display: block;
 }
 
-.articles {
+#articles {
     width: 1000px;
     display: flex;
     height: auto;
@@ -151,7 +151,7 @@ li a {
     grid-column: span 2;
 }
 
-.articles>div {
+#articles>div {
     background-color: #f1f1f1;
     height: 300px;
     width: 100%;
@@ -172,15 +172,15 @@ video {
     float: left;
 }
 
-.updatableNews .TextContent {
+.updatableNews .textContent {
     padding: 20px;
     padding-left: 310px;
 }
 
-.updatableNews .Title {
+.updatableNews .title {
     font-size: 24px;
 }
 
-.updatableNews .Text {
+.updatableNews .text {
     font-size: 16px;
 }
