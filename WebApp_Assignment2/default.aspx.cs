@@ -18,35 +18,43 @@ namespace WebApp_Assignment2
 
         private string getNewsAsHtmlString()
         {
-            List<newsData> items = new List<newsData>();
-            using (StreamReader r = new StreamReader(Server.MapPath("~/ ")+"/json/news.json"))
+            List<newsData> news = new List<newsData>();
+            using (StreamReader r = new StreamReader(Server.MapPath("~/ ") + "/json/news.json"))
             {
                 string json = r.ReadToEnd();
-                items = JsonConvert.DeserializeObject<List<newsData>>(json);
+                news = JsonConvert.DeserializeObject<List<newsData>>(json);
+            }
+            List<newsData> uNews = new List<newsData>();
+            using (StreamReader r = new StreamReader(Server.MapPath("~/ ") + "/json/updatableNews.json"))
+            {
+                string json = r.ReadToEnd();
+                uNews = JsonConvert.DeserializeObject<List<newsData>>(json);
             }
             string retString = "";
 
-            for (int i = 0; i < items.Count; i++)
+            for (int i = 0; i < uNews.Count; i++)
             {
-                retString += createContainerElement(items[i]);
+                retString += createUpdatableNewsElement(uNews[i]);
+            }
+
+            for (int i = 0; i < news.Count; i++)
+            {
+                retString += createNewsElement(news[i]);
             }
 
             return retString;
         }
 
-        private string createContainerElement(newsData e)
+        private string createNewsElement(newsData e)
         {
-            return string.Format("<div class=\"{0}\"><a href=\"{4}\"><img src =\"{1}\" class=\"image\"/><div class=\"{5}\" ><div class=\"title\">{2}</div><div class=\"text\">{3}</div></div></a></div>"
-                , e.Type, e.Image, e.Title, e.Text, ".aspx/" + e.Title, e.Type == "container" ? "overlay" : "textContent");
+            return string.Format("<div class=\"container\"><a href=\"{0}\"><img src =\"{1}\" class=\"image\"/><div class=\"overlay\" ><div class=\"title\">{2}</div><div class=\"text\">{3}</div></div></a></div>"
+                , ".aspx/" + e.Title, e.Image, e.Title, e.Text);
         }
-    }
 
-    public class newsData
-    {
-        public string Title { get; set; }
-        public string Image { get; set; }
-        public string Text { get; set; }
-        public string Type { get; set; }
-
+        private string createUpdatableNewsElement(newsData e)
+        {
+            return string.Format("<div class=\"updatableNews\"><a href=\"{0}\"><img src =\"{1}\" class=\"image\"/><div class=\"textContent\" ><div class=\"title\">{2}</div><div class=\"text\">{3}</div></div></a></div>"
+                , ".aspx/" + e.Title, e.Image, e.Title, e.Text);
+        }
     }
 }

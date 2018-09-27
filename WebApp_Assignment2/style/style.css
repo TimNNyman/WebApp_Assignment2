@@ -175,6 +175,7 @@ video {
 .updatableNews .textContent {
     padding: 20px;
     padding-left: 310px;
+    color: black;
 }
 
 .updatableNews .title {

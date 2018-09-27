@@ -2,55 +2,46 @@
    {  
       "Title":"Anger Management",
       "Image":"images/raptorsuit2.jpg",
-      "Text":"txt",
-      "Type":"updatableNews"
+      "Text":"txt"
    },
    {  
       "Title":"Anger Management2",
       "Image":"images/raptorsuit2.jpg",
-      "Text":"txt",
-      "Type":"container"
+      "Text":"txt"
    },
    {  
       "Title":"Raptor Attacks on Campus!",
       "Image":"images/raptorbench.jpg",
-      "Text":"txt",
-      "Type":"container"
+      "Text":"txt"
    },
    {  
       "Title":"Something.",
       "Image":"images/raptorsuit1.jpg",
-      "Text":"txt",
-      "Type":"container"
+      "Text":"txt"
    },
    {  
       "Title":"Don't try this at home!",
       "Image":"images/raptor2.jpg",
-      "Text":"txt",
-      "Type":"container"
+      "Text":"txt"
    },
    {  
       "Title":"Anger Management3",
       "Image":"images/raptorsuit2.jpg",
-      "Text":"txt",
-      "Type":"container"
+      "Text":"txt"
    },
    {  
       "Title":"Anger Management4",
       "Image":"images/raptorsuit2.jpg",
-      "Text":"txt",
-      "Type":"container"
+      "Text":"txt"
    },
    {  
       "Title":"Anger Management5",
       "Image":"images/raptorsuit2.jpg",
-      "Text":"txt",
-      "Type":"container"
+      "Text":"txt"
    },
    {  
       "Title":"Anger Management6",
       "Image":"images/raptorsuit2.jpg",
-      "Text":"txt",
-      "Type":"container"
+      "Text":"txt"
    }
 ]

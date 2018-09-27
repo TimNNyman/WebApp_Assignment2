@@ -58,10 +58,10 @@
         <div class="TopNav2">
             <ul>
                 <li>
-                    <a href="#">Raptor</a>
+                    <a href="addNews.aspx">Add news</a>
                 </li>
                 <li>
-                    <a href="#">More raptors</a>
+                    <a href="#">Raptors</a>
                 </li>
                 <li>
                     <a href="#">Short arms</a>
