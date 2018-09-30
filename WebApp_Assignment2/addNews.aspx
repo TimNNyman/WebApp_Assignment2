@@ -12,7 +12,6 @@
 <body>
     <form id="form1" runat="server">
         <main>
-            <form action="#" method="post">
                 <div>
                     <p>
                         <label for="Title">Title: </label>
@@ -32,7 +31,6 @@
                         <asp:Button ID="cancelBtn" runat="server" Text="Cancel" UseSubmitBehavior="false" OnClick="cancelBtn_Click" />
                     </p>
                 </div>
-            </form>
         </main>
     </form>
     <script>

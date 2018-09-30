@@ -16,7 +16,7 @@ namespace WebApp_Assignment2
             if ((string)Session["loggedIn"] != "true")
             {
                 Response.Redirect("login.aspx");
-            }
+            } 
         }
 
         protected void submitBtn_Click(object sender, EventArgs e)
@@ -57,6 +57,6 @@ namespace WebApp_Assignment2
         protected void cancelBtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("default.aspx");
-        }
+        }   
     }
 }
