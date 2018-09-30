@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 
 namespace WebApp_Assignment2
 {
@@ -40,9 +41,25 @@ namespace WebApp_Assignment2
                 }
             }
 
-            form1.InnerHtml += "<h1>" + title + "</h1>";
+ 
+            HtmlGenericControl myDiv = new HtmlGenericControl("div");
+            myDiv.ID = "myDiv";
+
+            myDiv.InnerHtml += "<img src=\"" + target.Image + "\" />";
+            PlaceHolder1.Controls.Add(myDiv);
+
+            HtmlGenericControl myDiv2 = new HtmlGenericControl("div");
+            myDiv.ID = "myDiv2";
+
+            myDiv2.InnerHtml += "<div class=\"title\">" + title + "</div>";
+            myDiv2.InnerHtml += "<div class=\"text\">" + target.Text + "</div>";
+
+            PlaceHolder1.Controls.Add(myDiv2);
+
+
+/*            form1.InnerHtml += "<h1>" + title + "</h1>";
             form1.InnerHtml += "<p>" + target.Text + "</p>";
-            form1.InnerHtml += "<img src=\"" + target.Image + "\" />";
+            form1.InnerHtml += "<img src=\"" + target.Image + "\" />"; */
         }
     }
 }
