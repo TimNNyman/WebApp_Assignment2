@@ -147,10 +147,21 @@ li a {
 .mainArticle > div {
     background-color: #f1f1f1;
     height: auto;
-    width: 100%;
+    width: auto;
     margin: auto;
     font-size: 14px;
     word-break:break-word;
+    padding: 0;
+}
+
+.articleBody > div{
+    background-color: #f1f1f1;
+    height: auto;
+    width: auto;
+    margin: auto;
+    font-size: 14px;
+    word-break:break-word;
+    padding: 5px;
 }
 
 .title {

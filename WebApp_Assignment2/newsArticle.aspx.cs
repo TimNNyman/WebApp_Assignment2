@@ -48,7 +48,7 @@ namespace WebApp_Assignment2
             myDiv.InnerHtml += "<img src=\"" + target.Image + "\" />";
             PlaceHolder1.Controls.Add(myDiv);
 
-            HtmlGenericControl myDiv2 = new HtmlGenericControl("div");
+            HtmlGenericControl myDiv2 = new HtmlGenericControl("div class=\"articleBody\"");
             myDiv.ID = "myDiv2";
 
             myDiv2.InnerHtml += "<div class=\"title\">" + title + "</div>";
