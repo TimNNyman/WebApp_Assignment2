@@ -13,6 +13,10 @@ namespace WebApp_Assignment2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((string)Session["loggedIn"] != "true")
+            {
+                Response.Redirect("default.aspx");
+            }
         }
 
         protected void Btn_Click(object sender, EventArgs e)

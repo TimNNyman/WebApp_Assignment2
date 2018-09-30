@@ -14,10 +14,6 @@ namespace WebApp_Assignment2
         protected void Page_Load(object sender, EventArgs e)
         {
             articles.InnerHtml += getNewsAsHtmlString();
-            if (Session["loggedIn"] != null)
-            {
-                Response.Write("<script>alert('Data inserted successfully')</script>");
-            }
         }
 
         private string getNewsAsHtmlString()

@@ -17,8 +17,15 @@ namespace WebApp_Assignment2
 
         protected void loginBtn_Click(object sender, EventArgs e)
         {
-            //if (username.Text != "" && password.Text != "")
-            Session["loggedIn"] = username.Text;
+            if (username.Text != "" && password.Text != "")
+            {
+                Session["loggedIn"] = "true";
+                Response.Redirect("addNews.aspx");
+            }
+        }
+
+        protected void cancelBtn_Click(object sender, EventArgs e)
+        {
             Response.Redirect("default.aspx");
         }
 

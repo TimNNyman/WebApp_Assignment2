@@ -163,7 +163,8 @@
                 <asp:TextBox ID="password" type="password" placeholder="Password" runat="server" required/>
                 <br />
 
-                <asp:Button ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click"/>
+                <asp:Button ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click" />
+                <asp:Button ID="cancelBtn" runat="server" Text="Cancel" UseSubmitBehavior="false" OnClick="cancelBtn_Click" />
             </div>
 
             </div>
