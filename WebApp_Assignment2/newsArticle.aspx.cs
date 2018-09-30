@@ -45,16 +45,20 @@ namespace WebApp_Assignment2
             HtmlGenericControl myDiv = new HtmlGenericControl("div");
             myDiv.ID = "myDiv";
 
-            myDiv.InnerHtml += "<img src=\"" + target.Image + "\" />";
+            myDiv.InnerHtml += "<div class=\"image\">" + "<img src=\"" + target.Image + "\" />" + "</div>";
+
+            myDiv.InnerHtml += "<div class=\"title\">" + title + "</div>";
+            myDiv.InnerHtml += "<div class=\"text\">" + target.Text + "</div>";
+
             PlaceHolder1.Controls.Add(myDiv);
 
-            HtmlGenericControl myDiv2 = new HtmlGenericControl("div class=\"articleBody\"");
+   /*          HtmlGenericControl myDiv2 = new HtmlGenericControl("div class=\"articleBody\"");
             myDiv.ID = "myDiv2";
 
             myDiv2.InnerHtml += "<div class=\"title\">" + title + "</div>";
             myDiv2.InnerHtml += "<div class=\"text\">" + target.Text + "</div>";
 
-            PlaceHolder1.Controls.Add(myDiv2);
+            PlaceHolder1.Controls.Add(myDiv2); */
 
 
 /*            form1.InnerHtml += "<h1>" + title + "</h1>";

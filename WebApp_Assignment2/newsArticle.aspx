@@ -9,6 +9,14 @@
     <link rel="stylesheet" type="text/css" href="style/HovrableArticle.css?"/>
     <script type="text/javascript" charset="utf-8" src="script/index.js"></script>
 
+    <style>
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
     <title></title>
 </head>
 <body>
