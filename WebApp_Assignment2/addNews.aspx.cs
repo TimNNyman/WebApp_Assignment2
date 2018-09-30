@@ -15,11 +15,11 @@ namespace WebApp_Assignment2
         {
             if ((string)Session["loggedIn"] != "true")
             {
-                Response.Redirect("default.aspx");
+                Response.Redirect("login.aspx");
             }
         }
 
-        protected void Btn_Click(object sender, EventArgs e)
+        protected void submitBtn_Click(object sender, EventArgs e)
         {
 
             if (FileUploadControl.HasFile)
@@ -29,11 +29,9 @@ namespace WebApp_Assignment2
                 {
                     filename = Path.GetFileName(FileUploadControl.FileName);
                     FileUploadControl.SaveAs(Server.MapPath("~/images/") + filename);
-                    StatusLabel.Text = "Upload status: File uploaded!";
                 }
                 catch (Exception ex)
                 {
-                    StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                     return;
                 }
 
@@ -54,7 +52,11 @@ namespace WebApp_Assignment2
 
                 Response.Redirect("default.aspx");
             }
+        }
 
+        protected void cancelBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("default.aspx");
         }
     }
 }

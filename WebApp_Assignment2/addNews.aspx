@@ -26,10 +26,10 @@
                         <asp:fileupload id="FileUploadControl" runat="server" />
                     </p>
                     <p>
-                        <asp:button id="btn" onclick="Btn_Click" text="Submit" runat="server" />
+                        <asp:button id="submitBtn" onclick="submitBtn_Click" text="Submit" runat="server" />
                     </p>
                     <p>
-                        <asp:label runat="server" id="StatusLabel" text="Upload status: " />
+                        <asp:Button ID="cancelBtn" runat="server" Text="Cancel" UseSubmitBehavior="false" OnClick="cancelBtn_Click" />
                     </p>
                 </div>
             </form>
