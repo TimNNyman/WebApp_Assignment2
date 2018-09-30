@@ -4,10 +4,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="stylesheet" type="text/css" href="style/style.css">
-    <link rel="stylesheet" type="text/css" href="style/HovrableArticle.css">
-    <link rel="stylesheet" type="text/css" href="style/footer.css">
-    <link rel="stylesheet" type="text/css" href="style/createContent.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
+    <link rel="stylesheet" type="text/css" href="style/HovrableArticle.css"/>
+    <link rel="stylesheet" type="text/css" href="style/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="style/createContent.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
