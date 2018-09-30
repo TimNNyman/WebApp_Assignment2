@@ -16,14 +16,14 @@
                 <div>
                     <p>
                         <label for="Title">Title: </label>
-                        <input type="text" name="title" id="Title" runat="server" />
+                        <input type="text" name="title" id="Title" runat="server" onkeyup="checkContent()" />
                     </p>
                     <p>
                         <label for="Content">Content: </label>
-                        <textarea name="content" rows="5" id="Content" runat="server"></textarea>
+                        <textarea name="content" rows="5" id="Content" runat="server" onkeyup="checkContent()"></textarea>
                     </p>
                     <p>
-                        <asp:fileupload id="FileUploadControl" runat="server" />
+                        <asp:fileupload id="FileUploadControl" runat="server"  />
                     </p>
                     <p>
                         <asp:button id="submitBtn" onclick="submitBtn_Click" text="Submit" runat="server" />
@@ -35,5 +35,14 @@
             </form>
         </main>
     </form>
+    <script>
+        function checkContent() {
+	        if(document.getElementById("content").value==="" || document.getElementById("title").value==="") { 
+                document.getElementById('submitBtn').disabled = true; 
+            } else { 
+                document.getElementById('submitBtn').disabled = false;
+            }
+        }
+    </script>
 </body>
 </html>
