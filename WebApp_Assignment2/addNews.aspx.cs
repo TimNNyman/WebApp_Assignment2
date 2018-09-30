@@ -15,24 +15,42 @@ namespace WebApp_Assignment2
         {
         }
 
-        protected void btn_Click(object sender, EventArgs e)
+        protected void Btn_Click(object sender, EventArgs e)
         {
-            List<newsData> _data = new List<newsData>();
 
-            _data.Add(new newsData()
+            if (FileUploadControl.HasFile)
             {
-                Title = Title.Value,
-                Image = "images/raptor2.jpg",
-                Text = Content.Value
-            });
-            using (StreamWriter file = File.CreateText(Server.MapPath("~/ ") + "/json/updatableNews.json"))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                //serialize object directly into file stream
-                serializer.Serialize(file, _data);
+                string filename;
+                try
+                {
+                    filename = Path.GetFileName(FileUploadControl.FileName);
+                    FileUploadControl.SaveAs(Server.MapPath("~/images/") + filename);
+                    StatusLabel.Text = "Upload status: File uploaded!";
+                }
+                catch (Exception ex)
+                {
+                    StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                    return;
+                }
+
+                List<newsData> _data = new List<newsData>();
+
+                _data.Add(new newsData()
+                {
+                    Title = Title.Value,
+                    Image = "images/" + filename,
+                    Text = Content.Value
+                });
+                using (StreamWriter file = File.CreateText(Server.MapPath("~/ ") + "/json/updatableNews.json"))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    //serialize object directly into file stream
+                    serializer.Serialize(file, _data);
+                }
+
+                Response.Redirect("default.aspx");
             }
 
-            Response.Redirect("default.aspx");
         }
     }
 }
