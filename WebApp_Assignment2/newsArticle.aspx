@@ -15,7 +15,7 @@
     <form id="form1" runat="server">
         <nav>
         <div class="Logo">
-            <a href="#">
+            <a href="default.aspx">
                 <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg" alt="">
             </a>
         </div>

@@ -26,7 +26,7 @@
     <form id="form1" runat="server">
         <nav>
         <div class="Logo">
-            <a href="#">
+            <a href="default.aspx">
                 <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg" alt="">
             </a>
         </div>
@@ -62,7 +62,9 @@
                     <a href="#">WWRA Associates</a>
                 </li>
                 <li>
-                    <a href="login.aspx">Login</a>
+                    <div id="loginDiv">
+                        <a href="login.aspx" id="login">Login</a>
+                    </div>
                 </li>
             </ul>
         </div>

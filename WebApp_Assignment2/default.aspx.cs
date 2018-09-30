@@ -14,6 +14,10 @@ namespace WebApp_Assignment2
         protected void Page_Load(object sender, EventArgs e)
         {
             articles.InnerHtml += getNewsAsHtmlString();
+
+            if ((string)Session["loggedIn"] == "true")
+            {
+            }
         }
 
         private string getNewsAsHtmlString()
@@ -60,6 +64,14 @@ namespace WebApp_Assignment2
         private string createNewsLink(string title)
         {
             return "newsArticle.aspx?title=" + title;
+        }
+
+        private void LogOut()
+        {
+            if ((string)Session["loggedIn"] != null)
+            {
+                Session.Abandon();
+            }
         }
     }
 }
