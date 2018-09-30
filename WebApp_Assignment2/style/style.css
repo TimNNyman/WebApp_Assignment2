@@ -71,6 +71,8 @@ main {
 
 form {
     float: left;
+    height: 68px;
+    width: 197px;
 }
 
 .TopNav1 {

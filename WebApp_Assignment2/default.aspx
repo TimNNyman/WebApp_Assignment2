@@ -8,6 +8,19 @@
     <link rel="stylesheet" type="text/css" href="style/HovrableArticle.css">
     <link rel="stylesheet" type="text/css" href="style/footer.css">
     <script type="text/javascript" charset="utf-8" src="script/index.js"></script>
+        <script type="text/javascript">
+        window.onload = function() {
+            var a = document.getElementById("mylink");
+            a.onclick = function () {
+                var para = document.createElement("p");
+                "document.getElementById('myImg').src='compman.gif'"
+                var node = document.createTextNode("This is new.");
+                para.appendChild(node);
+                var element = document.getElementById("div1");
+                element.appendChild(para);
+            }
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -49,7 +62,7 @@
                     <a href="#">WWRA Associates</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="login.aspx">Login</a>
                 </li>
             </ul>
         </div>
