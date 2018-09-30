@@ -143,6 +143,12 @@ li a {
     grid-gap: 30px;
 }
 
+
+#articles a {
+    text-decoration: none;
+    height: inherit;
+}
+
 .scrollingImgDiv {
     grid-column: span 3;
 }
@@ -151,7 +157,7 @@ li a {
     grid-column: span 2;
 }
 
-#articles>div {
+#articles > div {
     background-color: #f1f1f1;
     height: 300px;
     width: 100%;
@@ -173,9 +179,11 @@ video {
 }
 
 .updatableNews .textContent {
-    padding: 20px;
-    padding-left: 310px;
+    padding-left: 20px;
     color: black;
+    word-wrap: break-word;
+    height: inherit;
+    overflow:hidden;
 }
 
 .updatableNews .title {
@@ -184,4 +192,5 @@ video {
 
 .updatableNews .text {
     font-size: 16px;
+    word-wrap: break-word;
 }

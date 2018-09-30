@@ -4,9 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="stylesheet" type="text/css" href="style/style.css">
-    <link rel="stylesheet" type="text/css" href="style/HovrableArticle.css">
-    <link rel="stylesheet" type="text/css" href="style/footer.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css?"/>
+    <link rel="stylesheet" type="text/css" href="style/HovrableArticle.css"/>
+    <link rel="stylesheet" type="text/css" href="style/footer.css"/>
     <script type="text/javascript" charset="utf-8" src="script/index.js"></script>
 </head>
 <body>
