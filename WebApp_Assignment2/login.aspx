@@ -150,7 +150,7 @@
 
 </head>
 <body>
-    <form id="form2" runat="server" action="default.aspx">
+    <form id="form2" runat="server">
           <div id="id01" class="modal">
 
             <div class="imgcontainer">

@@ -19,6 +19,7 @@ namespace WebApp_Assignment2
         {
             //if (username.Text != "" && password.Text != "")
             Session["loggedIn"] = username.Text;
+            Response.Redirect("default.aspx");
         }
 
     }
