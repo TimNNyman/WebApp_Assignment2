@@ -48,13 +48,18 @@ namespace WebApp_Assignment2
         private string createNewsElement(newsData e)
         {
             return string.Format("<div class=\"container\"><a href=\"{0}\"><img src =\"{1}\" class=\"image\"/><div class=\"overlay\" ><div class=\"title\">{2}</div><div class=\"text\">{3}</div></div></a></div>"
-                , ".aspx/" + e.Title, e.Image, e.Title, e.Text);
+                , createNewsLink(e.Title), e.Image, e.Title, e.Text);
         }
 
         private string createUpdatableNewsElement(newsData e)
         {
             return string.Format("<div class=\"updatableNews\"><a href=\"{0}\"><img src =\"{1}\" class=\"image\"/><div class=\"textContent\" ><div class=\"title\">{2}</div><div class=\"text\">{3}</div></div></a></div>"
-                , ".aspx/" + e.Title, e.Image, e.Title, e.Text);
+                , createNewsLink(e.Title), e.Image, e.Title, e.Text);
+        }
+
+        private string createNewsLink(string title)
+        {
+            return "newsArticle.aspx?title=" + title;
         }
     }
 }

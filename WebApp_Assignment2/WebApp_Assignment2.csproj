@@ -93,6 +93,7 @@
     <None Include="json\news.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Content Include="newsArticle.aspx" />
     <Content Include="script\index.js" />
     <Content Include="style\Background.css" />
     <Content Include="style\createContent.css" />
@@ -116,6 +117,13 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="newsArticle.aspx.cs">
+      <DependentUpon>newsArticle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="newsArticle.aspx.designer.cs">
+      <DependentUpon>newsArticle.aspx</DependentUpon>
     </Compile>
     <Compile Include="newsData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
