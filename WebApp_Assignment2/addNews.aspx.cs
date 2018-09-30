@@ -39,9 +39,9 @@ namespace WebApp_Assignment2
 
                 _data.Add(new newsData()
                 {
-                    Title = Title.Value,
+                    Title = Title.Value.Replace(">", "").Replace("<", ""),
                     Image = "images/" + filename,
-                    Text = Content.Value
+                    Text = Content.Value.Replace(">", "").Replace("<", "")
                 });
                 using (StreamWriter file = File.CreateText(Server.MapPath("~/ ") + "/json/updatableNews.json"))
                 {
