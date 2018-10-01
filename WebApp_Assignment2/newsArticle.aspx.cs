@@ -16,15 +16,19 @@ namespace WebApp_Assignment2
         {
             string title = Request.QueryString["title"];
 
-            if (title == null)
-            {
-                Response.Redirect("default.aspx");
-            }
-
             newsData target = new newsData();
-
-            List<newsData> news = DatabaseConnector.Inst.readNewsData(Server.MapPath("~/ ") + "/json/news.json");
-            List<newsData> uNews = DatabaseConnector.Inst.readNewsData(Server.MapPath("~/ ") + "/json/updatableNews.json");
+            List<newsData> news = new List<newsData>();
+            using (StreamReader r = new StreamReader(Server.MapPath("~/ ") + "/json/news.json"))
+            {
+                string json = r.ReadToEnd();
+                news = JsonConvert.DeserializeObject<List<newsData>>(json);
+            }
+            List<newsData> uNews = new List<newsData>();
+            using (StreamReader r = new StreamReader(Server.MapPath("~/ ") + "/json/updatableNews.json"))
+            {
+                string json = r.ReadToEnd();
+                uNews = JsonConvert.DeserializeObject<List<newsData>>(json);
+            }
 
             news = news.Concat(uNews).ToList(); ;
 
@@ -47,6 +51,19 @@ namespace WebApp_Assignment2
             myDiv.InnerHtml += "<div class=\"text\">" + target.Text + "</div>";
 
             PlaceHolder1.Controls.Add(myDiv);
+
+   /*          HtmlGenericControl myDiv2 = new HtmlGenericControl("div class=\"articleBody\"");
+            myDiv.ID = "myDiv2";
+
+            myDiv2.InnerHtml += "<div class=\"title\">" + title + "</div>";
+            myDiv2.InnerHtml += "<div class=\"text\">" + target.Text + "</div>";
+
+            PlaceHolder1.Controls.Add(myDiv2); */
+
+
+/*            form1.InnerHtml += "<h1>" + title + "</h1>";
+            form1.InnerHtml += "<p>" + target.Text + "</p>";
+            form1.InnerHtml += "<img src=\"" + target.Image + "\" />"; */
         }
     }
 }

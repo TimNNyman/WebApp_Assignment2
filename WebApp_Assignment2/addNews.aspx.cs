@@ -43,8 +43,12 @@ namespace WebApp_Assignment2
                     Image = "images/" + filename,
                     Text = Content.Value.Replace(">", "").Replace("<", "")
                 });
-
-                DatabaseConnector.Inst.saveNewsData(Server.MapPath("~/ ") + "/json/updatableNews.json", _data);
+                using (StreamWriter file = File.CreateText(Server.MapPath("~/ ") + "/json/updatableNews.json"))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    //serialize object directly into file stream
+                    serializer.Serialize(file, _data);
+                }
 
                 Response.Redirect("default.aspx");
             }
