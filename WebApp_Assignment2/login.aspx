@@ -5,7 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <style>
         body {
             font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
@@ -24,24 +26,27 @@
             text-align: center;
         }
 
-        button {
-            background-color: darkgray;
+        .myBtn {
             color: white;
             padding: 14px 20px;
             margin: 8px 0;
             border: none;
             cursor: pointer;
             width: 100%;
+            grid-template-columns: repeat(auto-fit, 200px);
+            justify-content: center;
         }
 
-        button:hover {
+        .myBtn:hover {
             opacity: 0.8;
         }
 
-        .cancelbtn {
-            width: auto;
-            padding: 10px 18px;
-            background-color: crimson;
+        #loginBtn{
+            background-color:gray;
+        }
+
+        #cancelBtn {
+            background-color:red;
         }
 
         .imgcontainer {
@@ -51,98 +56,30 @@
         }
 
         img.avatar {
-            width: 25%;
-            height: 25%;
-            border-radius: 50%;
+            padding-left:5%;
+            width: 90%;
+            height: 90;
+            border-radius: 100%;
+            justify-content:center;
         }
 
-        .container {
-
-            padding: 16px;
-            text-align: center;
-            overflow:auto;
+        .login {
+            width: 500px;
+            display: flex;
+            height: auto;
+            margin: auto;
+            background-color: black;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 300px);
+            justify-content: center;
+            grid-gap: 30px;
         }
-        .loginmenu1 {
-            float: left;
+        #username {
+            width: 100%;
             
         }
-        .loginmenu2 {
-            float: right;
-        }
-
-
-        span.psw {
-            float: right;
-            padding-top: 16px;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-            padding-top: 60px;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto 15% auto;
-            border: 1px solid #888;
-            width: 30%;
-        }
-
-        .close {
-            position: absolute;
-            right: 25px;
-            top: 0;
-            color: #000;
-            font-size: 35px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: red;
-            cursor: pointer;
-        }
-
-        .animate {
-            -webkit-animation: animatezoom 0.6s;
-            animation: animatezoom 0.6s;
-        }
-
-        @-webkit-keyframes animatezoom {
-            from {
-                -webkit-transform: scale(0)
-            }
-            to {
-                -webkit-transform: scale(1)
-            }
-        }
-
-        @keyframes animatezoom {
-            from {
-                transform: scale(0)
-            }
-            to {
-                transform: scale(1)
-            }
-        }
-
-        @media screen and (max-width: 300px) {
-            span.psw {
-                display: block;
-                float: none;
-            }
-            .cancelbtn {
-                width: 100%;
-            }
+        #password {
+            width:100%;
         }
 
 
@@ -151,33 +88,25 @@
 </head>
 <body>
     <form id="form2" runat="server">
-          <div id="id01" class="modal">
+        <div class="login">
 
             <div class="imgcontainer">
                 <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg" alt="" class="avatar">
             </div>
 
-            <div class="container">
-                <asp:TextBox ID="username" type="text" placeholder="Username" runat="server" required/>
+            <div class="loginInput">
+                <asp:TextBox ID="username" type="text" placeholder="Username" runat="server" OnTextChanged="VerifyInput" required AutoPostBack="true"/>
 
-                <asp:TextBox ID="password" type="password" placeholder="Password" runat="server" required/>
+                <asp:TextBox ID="password" type="password" placeholder="Password" runat="server" OnTextChanged="VerifyInput" required AutoPostBack="true"/>
                 <br />
 
-                <asp:Button ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click" />
-                <asp:Button ID="cancelBtn" runat="server" Text="Cancel" UseSubmitBehavior="false" OnClick="cancelBtn_Click" />
+                <asp:Button ID="loginBtn" class="myBtn" runat="server" Text="Login" OnClick="loginBtn_Click" />
+                <asp:Button ID="cancelBtn" CssClass="myBtn" runat="server" Text="Cancel" UseSubmitBehavior="false" OnClick="cancelBtn_Click" />
             </div>
 
-            </div>
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById('id01');
-
-        document.getElementById('id01').style.display='block'
-
-
-    </script>
+        </div>
 
     </form>
+
 </body>
 </html>

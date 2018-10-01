@@ -29,5 +29,16 @@ namespace WebApp_Assignment2
             Response.Redirect("default.aspx");
         }
 
+        protected void VerifyInput(object sender, EventArgs e)
+        {
+            if (username.Text != "" && password.Text != "")
+            {
+                loginBtn.BackColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                loginBtn.BackColor = System.Drawing.Color.Gray;
+            }
+        }
     }
 }
