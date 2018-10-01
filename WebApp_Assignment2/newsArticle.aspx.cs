@@ -15,20 +15,16 @@ namespace WebApp_Assignment2
         protected void Page_Load(object sender, EventArgs e)
         {
             string title = Request.QueryString["title"];
+            if (title == null)
+            {
+                Response.Redirect("default.aspx");
+            }
 
             newsData target = new newsData();
-            List<newsData> news = new List<newsData>();
-            using (StreamReader r = new StreamReader(Server.MapPath("~/ ") + "/json/news.json"))
-            {
-                string json = r.ReadToEnd();
-                news = JsonConvert.DeserializeObject<List<newsData>>(json);
-            }
-            List<newsData> uNews = new List<newsData>();
-            using (StreamReader r = new StreamReader(Server.MapPath("~/ ") + "/json/updatableNews.json"))
-            {
-                string json = r.ReadToEnd();
-                uNews = JsonConvert.DeserializeObject<List<newsData>>(json);
-            }
+
+            List<newsData> news = DatabaseConnector.Inst.readNewsData(Server.MapPath("~/ ") + "/json/news.json");
+            List<newsData> uNews = DatabaseConnector.Inst.readNewsData(Server.MapPath("~/ ") + "/json/updatableNews.json");
+
 
             news = news.Concat(uNews).ToList(); ;
 
@@ -45,25 +41,18 @@ namespace WebApp_Assignment2
             HtmlGenericControl myDiv = new HtmlGenericControl("div");
             myDiv.ID = "myDiv";
 
-            myDiv.InnerHtml += "<div class=\"image\">" + "<img src=\"" + target.Image + "\" />" + "</div>";
+            if (target.Image.Substring(target.Image.LastIndexOf('.') + 1) == "mp4")
+            {
+                myDiv.InnerHtml += "<video controls class=\"updateVideo\"><source src=\"" + target.Image + "\" type=\"video/mp4\"/></video>";
+            }
+
+            else
+                myDiv.InnerHtml += "<div class=\"image\">" + "<img src=\"" + target.Image + "\" />" + "</div>";
 
             myDiv.InnerHtml += "<div class=\"title\">" + title + "</div>";
             myDiv.InnerHtml += "<div class=\"text\">" + target.Text + "</div>";
 
             PlaceHolder1.Controls.Add(myDiv);
-
-   /*          HtmlGenericControl myDiv2 = new HtmlGenericControl("div class=\"articleBody\"");
-            myDiv.ID = "myDiv2";
-
-            myDiv2.InnerHtml += "<div class=\"title\">" + title + "</div>";
-            myDiv2.InnerHtml += "<div class=\"text\">" + target.Text + "</div>";
-
-            PlaceHolder1.Controls.Add(myDiv2); */
-
-
-/*            form1.InnerHtml += "<h1>" + title + "</h1>";
-            form1.InnerHtml += "<p>" + target.Text + "</p>";
-            form1.InnerHtml += "<img src=\"" + target.Image + "\" />"; */
         }
     }
 }

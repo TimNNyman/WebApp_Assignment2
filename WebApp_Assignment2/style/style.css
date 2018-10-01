@@ -114,6 +114,10 @@ form {
     justify-content: center; */
 }
 
+.updateVideo{
+    float:left;
+}
+
 ul {
     list-style-type: none;
     margin: 0;

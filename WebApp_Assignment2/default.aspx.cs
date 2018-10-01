@@ -22,23 +22,19 @@ namespace WebApp_Assignment2
 
         private string getNewsAsHtmlString()
         {
-            List<newsData> news = new List<newsData>();
-            using (StreamReader r = new StreamReader(Server.MapPath("~/ ") + "/json/news.json"))
-            {
-                string json = r.ReadToEnd();
-                news = JsonConvert.DeserializeObject<List<newsData>>(json);
-            }
-            List<newsData> uNews = new List<newsData>();
-            using (StreamReader r = new StreamReader(Server.MapPath("~/ ") + "/json/updatableNews.json"))
-            {
-                string json = r.ReadToEnd();
-                uNews = JsonConvert.DeserializeObject<List<newsData>>(json);
-            }
+            List<newsData> news = DatabaseConnector.Inst.readNewsData(Server.MapPath("~/ ") + "/json/news.json");
+            List<newsData> uNews = DatabaseConnector.Inst.readNewsData(Server.MapPath("~/ ") + "/json/updatableNews.json");
             string retString = "";
 
             for (int i = 0; i < uNews.Count; i++)
             {
-                retString += createUpdatableNewsElement(uNews[i]);
+
+                if (uNews[i].Image.Substring(uNews[i].Image.LastIndexOf('.') + 1) == "mp4")
+                {
+                    retString += createUpdatableNewsElementVideo(uNews[i]);
+                }
+                else
+                    retString += createUpdatableNewsElement(uNews[i]);
             }
 
             for (int i = 0; i < news.Count; i++)
@@ -58,6 +54,12 @@ namespace WebApp_Assignment2
         private string createUpdatableNewsElement(newsData e)
         {
             return string.Format("<div class=\"updatableNews\"><a href=\"{0}\"><img src =\"{1}\" class=\"image\"/><div class=\"textContent\" ><div class=\"title\">{2}</div><div class=\"text\">{3}</div></div></a></div>"
+                , createNewsLink(e.Title), e.Image, e.Title, e.Text);
+        }
+
+        private string createUpdatableNewsElementVideo(newsData e)
+        {
+            return string.Format("<div class=\"updatableNews\"><a href=\"{0}\"><video controls class=\"updateVideo\"><source src=\"{1}\" type=\"video/mp4\"/></video><div class=\"textContent\" ><div class=\"title\">{2}</div><div class=\"text\">{3}</div></div></a></div>"
                 , createNewsLink(e.Title), e.Image, e.Title, e.Text);
         }
 

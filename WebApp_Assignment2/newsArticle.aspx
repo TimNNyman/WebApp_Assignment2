@@ -14,6 +14,14 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+        float: left;
+        margin: 10px;
+        width: 300px;
+        height: auto;
+    }
+
+    #myDiv .title {
+        font-size: 30px;
     }
 </style>
 
