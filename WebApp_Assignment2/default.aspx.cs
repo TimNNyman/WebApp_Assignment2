@@ -22,18 +22,9 @@ namespace WebApp_Assignment2
 
         private string getNewsAsHtmlString()
         {
-            List<newsData> news = new List<newsData>();
-            using (StreamReader r = new StreamReader(Server.MapPath("~/ ") + "/json/news.json"))
-            {
-                string json = r.ReadToEnd();
-                news = JsonConvert.DeserializeObject<List<newsData>>(json);
-            }
-            List<newsData> uNews = new List<newsData>();
-            using (StreamReader r = new StreamReader(Server.MapPath("~/ ") + "/json/updatableNews.json"))
-            {
-                string json = r.ReadToEnd();
-                uNews = JsonConvert.DeserializeObject<List<newsData>>(json);
-            }
+            List<newsData> news = DatabaseConnector.Inst.readNewsData(Server.MapPath("~/ ") + "/json/news.json");
+            List<newsData> uNews = DatabaseConnector.Inst.readNewsData(Server.MapPath("~/ ") + "/json/updatableNews.json");
+
             string retString = "";
 
             for (int i = 0; i < uNews.Count; i++)
